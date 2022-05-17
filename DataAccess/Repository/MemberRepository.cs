@@ -22,5 +22,7 @@ namespace DataAccess.Repository
         public Member Update(Member member) => MemberDAO.Instance.Update(member);
 
         public void Delete(Member member) => MemberDAO.Instance.Delete(member);
+
+        public bool IsAdminLogin(string email, string password) => MemberDAO.Instance.IsAdminLogin(email, password);
     }
 }

@@ -47,8 +47,9 @@ namespace DataAccess
 
         public bool IsAdminLogin(String email, String password)
         {
+            var path = Directory.GetCurrentDirectory();
             IConfiguration config = new ConfigurationBuilder()
-                                        .SetBasePath(Directory.GetCurrentDirectory())
+                                        .SetBasePath(path)
                                         .AddJsonFile("appsettings.json", true, true)
                                         .Build();
             String adminEmail = config["admin:email"];

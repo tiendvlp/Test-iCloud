@@ -10,6 +10,7 @@ namespace DataAccess.Repository
     public interface IMemberRepository
     {
         Member GetMemberLogin(String email, String password);
+        bool IsAdminLogin(String email, String password);
         IEnumerable<Member> GetMembersList();
         Member GetMemberById(int ID);
         Member GetMemberByEmail(String email);

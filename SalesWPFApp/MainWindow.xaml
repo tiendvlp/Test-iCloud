@@ -5,6 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SalesWPFApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+        Title="Main Window" Height="416" Width="409" Background="LightCyan"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="0,0,88,0">
+        <Label Content="Admin management" HorizontalAlignment="Left" Margin="33,18,0,10" FontSize="25" FontWeight="Bold" Foreground="LightCoral" Width="426" />
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="66,86,0,88" Width="286">
+            <Button x:Name="btn_openMembers" Content="Members" Width="211" Height="35" Margin="10" Click="btn_openMembers_Click" />
+            <Button x:Name="btn_openProducts" Content="Products" Width="211" Height="35" Margin="10" Click="btn_openProducts_Click" />
+            <Button x:Name="btn_openOrders" Content="Orders" Width="208" Height="35" Margin="10" Click="btn_openOrders_Click"  />
+            <Button x:Name="btn_openReport" Content="Report" Width="208" Height="35" Margin="10" Click="btn_openReport_Click"  />
+        </StackPanel>
+        <Button x:Name="btn_logout" Content="Logout" Width="80" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Margin="226,334,0,0" Click="btn_logout_Click"/>
+    </Grid>
 </Window>
