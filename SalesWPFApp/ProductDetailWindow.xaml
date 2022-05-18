@@ -1,0 +1,36 @@
+﻿<Window x:Class="SalesWPFApp.ProductDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        Title="Product Details" Height="450" Width="500" Background="Beige" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="400">
+            <Label Name="lbTitle" Foreground="DeepSkyBlue" FontFamily="Bold" HorizontalAlignment="Center"
+                           FontSize="20" Content="Product Information" Margin="10"/>
+            <Label Name="lbProductId" Content="Product ID" />
+            <TextBox Name="txtProductId" Height="25"/>
+            <Label Name="lbCategoryId" Content="Category ID" />
+            <ComboBox Name="cbCategoryId" Height="25"/>
+            <Label Name="lbProductName" Content="Product Name" />
+            <TextBox Name="txtProductName" Height="25"/>
+            <Label Name="lbWeight" Content="Weight" />
+            <TextBox Name="txtWeight" Height="25"/>
+            <Label Name="lbUnitPrice" Content="Unit Price" />
+            <TextBox Name="txtUnitPrice" Height="25"/>
+            <Label Name="lbUnitsInStock" Content="Units In Stock" />
+            <TextBox Name="txtUnitsInStock" Height="25"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Height="25">
+            <Button x:Name="btnInsert" Width="80" Content="Save" Click="BtnInsert_Click"/>
+            <Button x:Name="btnDelete" Margin="30 0 0 0" Width="80" Content="Delete" Click="BtnDelete_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

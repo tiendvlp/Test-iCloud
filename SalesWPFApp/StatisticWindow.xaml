@@ -1,0 +1,29 @@
+﻿<Window x:Class="SalesWPFApp.StatisticWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        Title="Window Report" Height="450" Width="450" Background="Beige"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Sales Report" HorizontalAlignment="Center" Margin="12" FontSize="18" FontWeight="DemiBold" Foreground="DeepSkyBlue" />
+        <StackPanel Orientation="Vertical" Margin="50" HorizontalAlignment="Center" Width="300">
+            <StackPanel Orientation="Horizontal" Height="45">
+                <TextBox x:Name="dp_start" Margin="0 10 10 10" Width="100"/>
+                <TextBox x:Name="dp_end" Margin="0 10 10 10" Width="100"/>
+                <Button x:Name="btn_viewSales" Content="View" Height="25" Width="80" Click="btn_viewSales_Click"  />
+            </StackPanel>
+            <ListView Name="lvSales" Height="Auto">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Date" Width="140" DisplayMemberBinding="{Binding Path=Date}" />
+                        <GridViewColumn Header="Sales" Width="150" DisplayMemberBinding="{Binding Path=Amount}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        <Button x:Name="btnClose" Margin="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="80" Height="25" Content="Close" Click="btnClose_Click"/>
+    </Grid>
+</Window>

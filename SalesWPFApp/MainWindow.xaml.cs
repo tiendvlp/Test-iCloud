@@ -36,7 +36,7 @@ namespace SalesWPFApp
 
         private void btn_openOrders_Click(object sender, RoutedEventArgs e)
         {
-            OrderWindow windowOrders = new();
+            OrdersWindow windowOrders = new();
             windowOrders.Show();
         }
 

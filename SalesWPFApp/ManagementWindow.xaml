@@ -1,0 +1,80 @@
+﻿<Window x:Class="SalesWPFApp.ManagementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        Title="Window Member" Height="475" Width="1200" Background="Beige"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Label 
+                Name="lbTitle" 
+                Foreground="MediumPurple" 
+                FontWeight="DemiBold"
+                FontSize="28" 
+                Margin="12"
+                HorizontalAlignment="Center"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="500" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="0" Width="400">
+                    <Label Name="lbProfileTitle" Foreground="DeepSkyBlue" FontWeight="DemiBold" 
+                           FontSize="22" HorizontalAlignment="Center" Content="Profile"/>
+                    <Label Name="lbEmail" Content="Email"/>
+                    <TextBox Name="txtEmail" Height="25" IsEnabled="False"/>
+                    <Label Name="lbCompanyName" Content="Company Name"/>
+                    <TextBox Name="txtCompanyName" Height="25"/>
+                    <Label Name="lbCity" Content="City"/>
+                    <TextBox Name="txtCity" Height="25"/>
+                    <Label Name="lbCountry" Content="Country"/>
+                    <TextBox Name="txtCountry" Height="25"/>
+                    <Label Name="lbPassword" Content="Password"/>
+                    <PasswordBox Name="txtPassword" Height="25"/>
+                    <Button Name="btnUpdateProfile" Height="25" Width="100" Content="Save" Margin="20" Click="Button_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="1" Width="600">
+                    <Label Name="lbOrderHistoryTitle" Foreground="DeepSkyBlue" FontWeight="DemiBold"
+                        FontSize="22" HorizontalAlignment="Center" Content="Orders History"/>
+                    <ListView Name="lvOrderHistory" Margin="0 25 0 0" Height="Auto" PreviewMouseLeftButtonUp="lvOrderHistory_PreviewMouseLeftButtonUp">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Order ID" Width="60" 
+                                    DisplayMemberBinding="{Binding Path=OrderId}" />
+                                <GridViewColumn Header="Date" Width="140"
+                                    DisplayMemberBinding="{Binding Path=OrderDate}"/>
+                                <GridViewColumn Header="Required Date" Width="140" 
+                                    DisplayMemberBinding="{Binding Path=RequiredDate}"/>
+                                <GridViewColumn Header="Shipped Date" Width="140" 
+                                    DisplayMemberBinding="{Binding Path=ShippedDate}"/>
+                                <GridViewColumn Header="Freight"  Width="110" 
+                                    DisplayMemberBinding="{Binding Path=Freight}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <ListView Name="lvOrderDetail" Margin="0 25 0 0" Height="Auto" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Order ID" Width="60" 
+                                    DisplayMemberBinding="{Binding Path=OrderId}"/>
+                                <GridViewColumn Header="Product ID" Width="140"
+                                    DisplayMemberBinding="{Binding Path=ProductId}"/>
+                                <GridViewColumn Header="Unit Price" Width="140" 
+                                    DisplayMemberBinding="{Binding Path=UnitPrice}"/>
+                                <GridViewColumn Header="Quantity" Width="140" 
+                                    DisplayMemberBinding="{Binding Path=Quantity}"/>
+                                <GridViewColumn Header="Discount" Width="110" 
+                                    DisplayMemberBinding="{Binding Path=Discount}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <Button x:Name="btn_logout" Content="Logout" Width="80" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Margin="20" Click="btn_logout_Click"/>
+    </Grid>
+</Window>

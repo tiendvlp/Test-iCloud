@@ -1,0 +1,36 @@
+﻿<Window x:Class="SalesWPFApp.OrderDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        Title="Order Details" Height="450" Width="500" Background="Beige"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Width="450">
+            <Label Name="lbTitle" Foreground="DeepSkyBlue" FontWeight="DemiBold" HorizontalAlignment="Center"
+                           FontSize="20" Content="Order Information" Margin="5"/>
+            <Label Name="lbOrderId" Content="Order ID" />
+            <TextBox Name="txtOrderId" Height="25"/>
+            <Label Name="lbMemberId" Content="Member ID" />
+            <TextBox Name="txtMemberId" Height="25"/>
+            <Label Name="lbOrderDate" Content="Order Date" />
+            <TextBox Name="txtOrderDate" Height="25"/>
+            <Label Name="lbRequiredDate" Content="Required Date" />
+            <TextBox Name="txtRequiredDate" Height="25"/>
+            <Label Name="lbShippedDate" Content="Shipped Date" />
+            <TextBox Name="txtShippedDate" Height="25"/>
+            <Label Name="lbFreight" Content="Freight" />
+            <TextBox Name="txtFreight" Height="25"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Height="25">
+            <Button x:Name="btnInsert" Width="80" Content="Save" Click="BtnInsert_Click"/>
+            <Button x:Name="btnDelete" Width="80" Margin="30 0 0 0" Content="Delete" Click="BtnDelete_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
