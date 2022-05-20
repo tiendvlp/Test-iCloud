@@ -93,7 +93,7 @@ namespace DataAccess
             try
             {
                 var fStoreDb = new FStoreDBContext();
-                products = fStoreDb.Products.Where(p => p.UnitPrice == unitPrice).ToList();
+                products = fStoreDb.Products.Where(p => p.UnitPrice <= unitPrice).ToList();
             }
             catch (Exception ex)
             {
@@ -107,7 +107,7 @@ namespace DataAccess
             try
             {
                 var fStoreDb = new FStoreDBContext();
-                products = fStoreDb.Products.Where(p => p.UnitsInStock == unitsInStock).ToList();
+                products = fStoreDb.Products.Where(p => p.UnitsInStock >= unitsInStock).ToList();
             }
             catch (Exception ex)
             {
