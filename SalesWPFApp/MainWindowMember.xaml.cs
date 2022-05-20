@@ -18,11 +18,11 @@ using System.Diagnostics;
 using BusinessObject.BusinessObject;
 
 namespace SalesWPFApp {
-    public partial class ManagementWindow : Window {
+    public partial class MainWindowMember : Window {
         IOrderRepository orderRepository;
         IMemberRepository memberRepository;
         Member member;
-        public ManagementWindow(Member _member) {
+        public MainWindowMember(Member _member) {
             InitializeComponent();
             orderRepository = new OrderRepository();
             memberRepository = new MemberRepository();

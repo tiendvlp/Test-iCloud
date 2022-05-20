@@ -47,11 +47,10 @@ namespace SalesWPFApp
                 Member member = memberRepository.GetMemberLogin(email, pwd);
                 if (member != null)
                 {
-                    // MainWindowMember memWindow = new MainWindowMember(member);
-                    // memWindow.lbTitle.Content = "Welcome, " + member.Email.ToString();
-                    // memWindow.Show();
-                    // Close();
-                    Console.WriteLine("here");
+                    MainWindowMember memWindow = new MainWindowMember(member);
+                    memWindow.lbTitle.Content = "Welcome, " + member.Email.ToString();
+                    memWindow.Show();
+                    Close();
                 }
                 else
                 {

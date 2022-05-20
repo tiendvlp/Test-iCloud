@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SalesWPFApp"
         mc:Ignorable="d"
-        Title="Window Members" 
+        Title="MemberWindow" 
         Width="700" Height="500" Background="Beige"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <DockPanel VerticalAlignment="Top" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="619*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel VerticalAlignment="Top" Margin="10,10,10,0" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="390" />
