@@ -58,20 +58,56 @@ namespace DataAccess
             return product;
         }
 
+        public IEnumerable<Product> GetProductByID(int id)
+        {
+            List<Product> products = new();
+            try
+            {
+                var fStoreDb = new FStoreDBContext();
+                products = fStoreDb.Products.Where(p => p.ProductId == id).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return products;
+        }
+
         public IEnumerable<Product> GetProductByKeyword(String keyword)
         {
             List<Product> products = new();
             try
             {
                 var fStoreDb = new FStoreDBContext();
-                products.AddRange(fStoreDb.Products.Where(p => p.ProductName.Contains(keyword)).ToList());
-                products.AddRange(fStoreDb.Products.Where(p => p.ProductId.ToString().Contains(keyword)).ToList());
-                if (int.TryParse(keyword, out _))
-                {
-                    products.AddRange(fStoreDb.Products.Where(p => p.UnitsInStock == int.Parse(keyword)).ToList());
-                    products.AddRange(fStoreDb.Products.Where(p => p.UnitPrice == int.Parse(keyword)).ToList());
-                }
-                products = products.Distinct().ToList();
+                products = fStoreDb.Products.Where(p => p.ProductName.Contains(keyword)).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return products;
+        }
+        public IEnumerable<Product> GetProductByUnitPrice(decimal unitPrice)
+        {
+            List<Product> products = new();
+            try
+            {
+                var fStoreDb = new FStoreDBContext();
+                products = fStoreDb.Products.Where(p => p.UnitPrice == unitPrice).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return products;
+        }
+        public IEnumerable<Product> GetProductByUnitInStock(int unitsInStock)
+        {
+            List<Product> products = new();
+            try
+            {
+                var fStoreDb = new FStoreDBContext();
+                products = fStoreDb.Products.Where(p => p.UnitsInStock == unitsInStock).ToList();
             }
             catch (Exception ex)
             {
