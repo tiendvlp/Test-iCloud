@@ -79,13 +79,13 @@ namespace DataAccess
             return members;
         }
 
-        public Member GetMemberById(int ID)
+        public IEnumerable<Member> GetMemberById(int ID)
         {
-            Member mem = null;
+            IEnumerable<Member> mem = null;
             try
             {
                 var fStoreDb = new FStoreDBContext();
-                mem = fStoreDb.Members.SingleOrDefault(mem => mem.MemberId == ID);
+                mem = fStoreDb.Members.Where(mem => mem.MemberId == ID).ToList();
             }
             catch(Exception ex)
             {
@@ -94,13 +94,13 @@ namespace DataAccess
             return mem;
         }
 
-        public Member GetMemberByEmail(String email)
+        public IEnumerable<Member> GetMemberByEmail(String email)
         {
-            Member member = null;
+            IEnumerable<Member> member = null;
             try
             {
                 var fStoreDb = new FStoreDBContext();
-                member = fStoreDb.Members.SingleOrDefault(mem => mem.Email == email);
+                member = fStoreDb.Members.Where(mem => mem.Email == email).ToList();
             }
             catch (Exception ex)
             {

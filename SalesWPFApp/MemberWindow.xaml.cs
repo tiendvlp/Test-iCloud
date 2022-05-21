@@ -40,5 +40,34 @@ namespace SalesWPFApp {
             MemberDetailWindow memberDialog = new(mem);
             memberDialog.ShowDialog();
         }
+
+        private void btnSearchById_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                int ID = Int32.Parse(idTextbox.Text);
+                lvMembers.ItemsSource = memberRepository.GetMemberById(ID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get Member By ID");
+            }
+
+        }
+
+        private void btnSearchByEmail_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                string email = emailTextbox.Text;
+                lvMembers.ItemsSource = memberRepository.GetMemberByEmail(email);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get Member By Name");
+            }
+        }
     }
 }

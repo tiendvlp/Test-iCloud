@@ -12,8 +12,8 @@ namespace DataAccess.Repository
         Member GetMemberLogin(String email, String password);
         bool IsAdminLogin(String email, String password);
         IEnumerable<Member> GetMembersList();
-        Member GetMemberById(int ID);
-        Member GetMemberByEmail(String email);
+        IEnumerable<Member> GetMemberById(int ID);
+        IEnumerable<Member> GetMemberByEmail(String email);
         void Create(Member member);
         Member Update(Member member);
         void Delete(Member member);

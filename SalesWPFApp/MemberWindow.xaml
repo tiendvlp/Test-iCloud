@@ -6,20 +6,20 @@
         xmlns:local="clr-namespace:SalesWPFApp"
         mc:Ignorable="d"
         Title="MemberWindow" 
-        Width="700" Height="500" Background="Beige"
+        Width="700" Height="500" Background="LightCyan"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid>
+    <Grid Margin="0,0,0,19">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="81*"/>
             <ColumnDefinition Width="619*"/>
         </Grid.ColumnDefinitions>
         <DockPanel VerticalAlignment="Top" Margin="10,10,10,0" Grid.ColumnSpan="2">
-            <Grid>
+            <Grid Height="467" Width="672">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="390" />
-                    <RowDefinition Height="60" />
+                    <RowDefinition Height="372" />
+                    <RowDefinition Height="78" />
                 </Grid.RowDefinitions>
-                <ListView Grid.Row="0" Name="lvMembers" Height="Auto" Width="Auto" PreviewMouseDoubleClick="lvMembers_PreviewMouseRightButtonUp">
+                <ListView Grid.Row="0" Name="lvMembers" Height="Auto" Width="Auto" PreviewMouseDoubleClick="lvMembers_PreviewMouseRightButtonUp" Margin="100,0,0,29">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Member ID" Width="70"
@@ -37,11 +37,15 @@
                         </GridView>
                     </ListView.View>
                 </ListView>
-                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
-                    <Button x:Name="btnLoad" Margin="10" Width="80" Height="25" Content="Load" Click="BtnLoad_Click"/>
-                    <Button x:Name="btnCreate" Margin="10" Width="80" Height="25" Content="Add" Click="BtnInsert_Click"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Width="0">
                 </StackPanel>
-                <Button Grid.Row="1" x:Name="btnClose" Margin="10" Width="80" Height="25" Content="Close" Click="BtnClose_Click"  HorizontalAlignment="Right"/>
+                <Button Grid.Row="1" x:Name="btnClose" Margin="582,20,0,20" Width="80" Content="Close" Click="BtnClose_Click"  HorizontalAlignment="Left"/>
+                <Button x:Name="btnLoad" Content="Reload" Click="BtnLoad_Click" Margin="10,97,582,251"/>
+                <Button x:Name="btnCreate" Margin="10,53,582,293" Content="Add" Click="BtnInsert_Click"/>
+                <TextBox x:Name="idTextbox" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="18"/>
+                <Button x:Name="btnSearchById" Content="Search Member By ID" HorizontalAlignment="Left" Margin="180,10,0,0" Grid.Row="1" VerticalAlignment="Top" Click="btnSearchById_Click" Height="20" Width="135"/>
+                <TextBox x:Name="emailTextbox" HorizontalAlignment="Left" Margin="10,40,0,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="18"/>
+                <Button x:Name="btnSearchByEmail" Content="Search Member By Email" HorizontalAlignment="Left" Margin="180,40,0,20" Grid.Row="1" Click="btnSearchByEmail_Click" Width="135"/>
             </Grid>
         </DockPanel>
     </Grid>

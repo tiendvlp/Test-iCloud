@@ -13,9 +13,9 @@ namespace DataAccess.Repository
 
         public Member GetMemberLogin(String email, String password) => MemberDAO.Instance.GetMemberLogin(email, password);
 
-        public Member GetMemberByEmail(string email) => MemberDAO.Instance.GetMemberByEmail(email);
+        public IEnumerable<Member> GetMemberByEmail(string email) => MemberDAO.Instance.GetMemberByEmail(email);
 
-        public Member GetMemberById(int ID) => MemberDAO.Instance.GetMemberById(ID);
+        public IEnumerable<Member> GetMemberById(int ID) => MemberDAO.Instance.GetMemberById(ID);
 
         public void Create(Member member) => MemberDAO.Instance.Create(member);
 
