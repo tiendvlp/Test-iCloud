@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SalesWPFApp"
         mc:Ignorable="d"
-        Title="Product Details" Height="450" Width="500" Background="Beige" 
+        Title="Product Details" Height="450" Width="500" Background="LightCyan" 
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
@@ -13,8 +13,8 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="400">
-            <Label Name="lbTitle" Foreground="DeepSkyBlue" FontFamily="Bold" HorizontalAlignment="Center"
-                           FontSize="20" Content="Product Information" Margin="10"/>
+            <Label Name="lbTitle" Foreground="LightCoral" FontWeight="Bold" HorizontalAlignment="Center"
+                           FontSize="20" Content="Product Details" Margin="10"/>
             <Label Name="lbProductId" Content="Product ID" />
             <TextBox Name="txtProductId" Height="25"/>
             <Label Name="lbCategoryId" Content="Category ID" />

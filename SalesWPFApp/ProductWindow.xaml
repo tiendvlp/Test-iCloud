@@ -5,19 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SalesWPFApp"
         mc:Ignorable="d"
-        Title="WindowProducts" Height="450" Width="720" Background="Beige"
+        Title="WindowProducts" Height="550" Width="811" Background="LightCyan"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid>
+    <Grid Margin="0,0,33,55">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" MinHeight="72" />
+            <RowDefinition />
             <RowDefinition Height="60" />
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBox Name="txtSearch" Width="300" Margin="20" Height="25" />
-            <Button x:Name="btnSearch" Width="80" Height="25" Content="Search" Click="btnSearch_Click"/>
-        </StackPanel>
-        <ListView Grid.Row="1" Name="lvProducts" Height="Auto" Width="Auto" PreviewMouseDoubleClick="lvProducts_PreviewMouseRightButtonUp">
+        <TextBox Name="txtSearch" Margin="27,23,555,23" />
+        <Button x:Name="btnSearch" Content="Search By Keyword" Click="btnSearch_Click" Margin="230,23,413,23"/>
+        <ListView Grid.Row="1" Name="lvProducts" Height="Auto" Width="Auto" PreviewMouseDoubleClick="lvProducts_PreviewMouseRightButtonUp" Margin="27,45,10,30" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Product ID" Width="100" DisplayMemberBinding="{Binding Path=ProductId}" />
@@ -29,10 +27,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Height="45">
-            <Button x:Name="btnLoad" Margin="10" Width="80" Content="Load" Click="BtnLoad_Click"/>
-            <Button x:Name="btnCreate" Margin="10" Width="80" Content="Add" Click="BtnInsert_Click"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="27,43,-27,-40">
+            <Button x:Name="btnLoad" Width="80" Content="Reload" Click="BtnLoad_Click" Height="40"/>
+            <Button x:Name="btnCreate" Width="80" Content="Add" Click="BtnInsert_Click" Height="39"/>
         </StackPanel>
-        <Button Grid.Row="2" x:Name="btnClose" Margin="10" HorizontalAlignment="Right" Width="80" Height="25" Content="Close" Click="BtnClose_Click"/>
+        <Button Grid.Row="2" x:Name="btnClose" Margin="0,64,0,-29" HorizontalAlignment="Right" Width="80" Content="Close" Click="BtnClose_Click" RenderTransformOrigin="0.558,2.279"/>
+        <Button x:Name="btnSearch_Copy" Content="Search By Keyword" Click="btnSearch_Click" Margin="230,23,413,23"/>
+        <Button x:Name="btnSearchID" Content="Search By ID" Click="btnSearchID_Click" Margin="380,23,263,23"/>
+        <Button x:Name="btnSearchUnitPrice" Content="Search By UnitPrice" Click="btnSearchUnitPrice_Click" Margin="526,10,117,36"/>
+        <Button x:Name="btnSearchUnitInStock" Content="Search By UnitInStock" Click="btnSearchUnitInStock_Click" Margin="526,48,117,0"/>
     </Grid>
 </Window>

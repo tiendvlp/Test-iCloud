@@ -58,5 +58,90 @@ namespace SalesWPFApp {
                 LoadProductList();
             }
         }
+
+        private void btnSearchID_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtSearch.Text != null)
+            {
+                try
+                {
+                    int ID = Int32.Parse(txtSearch.Text);
+                    IEnumerable<Product> result = productRepository.GetProductByID(ID);
+                    if (!result.Any())
+                    {
+                        MessageBox.Show("There is no matched record.", "Search Product By ID");
+                    }
+                    else
+                    {
+                        lvProducts.ItemsSource = result;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Search Product By ID");
+                }
+            }
+            else
+            {
+                LoadProductList();
+            }
+        }
+
+        private void btnSearchUnitPrice_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtSearch.Text != null)
+            {
+                try
+                {
+                    decimal unitPrice = Decimal.Parse(txtSearch.Text);
+                    IEnumerable<Product> result = productRepository.GetProductByUnitPrice(unitPrice);
+                    if (!result.Any())
+                    {
+                        MessageBox.Show("There is no matched record.", "Search Product By Unit Price");
+                    }
+                    else
+                    {
+                        lvProducts.ItemsSource = result;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Search Product By Unit Price");
+                }
+            }
+            else
+            {
+                LoadProductList();
+            }
+        }
+
+        private void btnSearchUnitInStock_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtSearch.Text != null)
+            {
+                try
+                {
+                    int unitsInStock = Int32.Parse(txtSearch.Text);
+                    IEnumerable<Product> result = productRepository.GetProductByUnitInStock(unitsInStock);
+                    if (!result.Any())
+                    {
+                        MessageBox.Show("There is no matched record.", "Search Product By unitsInStock");
+                    }
+                    else
+                    {
+                        lvProducts.ItemsSource = result;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Search Product By unitsInStock");
+                }
+            }
+            else
+            {
+                LoadProductList();
+            }
+
+        }
     }
 }

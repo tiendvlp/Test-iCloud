@@ -93,7 +93,7 @@ namespace DataAccess
             try
             {
                 var fStoreDb = new FStoreDBContext();
-                products = fStoreDb.Products.Where(p => p.UnitPrice <= unitPrice).ToList();
+                products = fStoreDb.Products.Where(p => p.UnitPrice == unitPrice).ToList();
             }
             catch (Exception ex)
             {
@@ -107,7 +107,7 @@ namespace DataAccess
             try
             {
                 var fStoreDb = new FStoreDBContext();
-                products = fStoreDb.Products.Where(p => p.UnitsInStock >= unitsInStock).ToList();
+                products = fStoreDb.Products.Where(p => p.UnitsInStock == unitsInStock).ToList();
             }
             catch (Exception ex)
             {
@@ -196,19 +196,41 @@ namespace DataAccess
             }
         }
 
-        public IEnumerable<Category> GetCategoryList()
+        public IEnumerable<String> GetCategoryNameList()
         {
             List<Category> categories;
+            List<String> categoryNames = new List<String>();
+
             try
             {
                 var fStoreDb = new FStoreDBContext();
                 categories = fStoreDb.Categories.ToList();
+                foreach (var category in categories)
+                {
+                    categoryNames.Add(category.CategoryName);
+                }
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            return categories;
+            return categoryNames;
+        }
+
+        public int GetCategoryIdByName(String categoryName)
+        {
+            int categoryId;
+
+            try
+            {
+                var fStoreDb = new FStoreDBContext();
+                categoryId = fStoreDb.Categories.SingleOrDefault(category => category.CategoryName.Equals(categoryName)).CategoryId;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return categoryId;
         }
     }
 }

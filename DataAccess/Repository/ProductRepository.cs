@@ -13,7 +13,9 @@ namespace DataAccess.Repository
 
         public void Delete(Product product) => ProductDAO.Instance.Delete(product);
 
-        public IEnumerable<Category> GetCategoryList() => ProductDAO.Instance.GetCategoryList();
+        public IEnumerable<String> GetCategoryNameList() => ProductDAO.Instance.GetCategoryNameList();
+
+        public int GetCategoryIdByName(String categoryName) => ProductDAO.Instance.GetCategoryIdByName(categoryName);
 
         public Product GetProductById(int id) => ProductDAO.Instance.GetProductById(id);
 

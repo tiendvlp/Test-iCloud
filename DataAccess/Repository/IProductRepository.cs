@@ -18,6 +18,7 @@ namespace DataAccess.Repository
         void Create(Product product);
         void Update(Product product);
         void Delete(Product product);
-        IEnumerable<Category> GetCategoryList();
+        IEnumerable<String> GetCategoryNameList();
+        int GetCategoryIdByName(String categoryName);
     }
 }
