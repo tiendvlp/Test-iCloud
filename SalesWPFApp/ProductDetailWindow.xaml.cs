@@ -13,11 +13,11 @@ namespace SalesWPFApp {
             productRepository = new ProductRepository();
             isEdit = false;
             btnDelete.Visibility = Visibility.Hidden;
-            cbCategoryId.ItemsSource = productRepository.GetCategoryList();
+            cbCategoryId.ItemsSource = productRepository.GetCategoryNameList();
             cbCategoryId.SelectedIndex = 0;
             if (_product != null) {
                 txtProductId.Text = _product.ProductId.ToString();
-                cbCategoryId.SelectedIndex = productRepository.GetCategoryList().ToList().FindIndex(i => i == _product.Category);
+              //  cbCategoryId.SelectedIndex = productRepository.GetCategoryNameList().ElementAt(0);
                 txtProductName.Text = _product.ProductName.ToString();
                 txtWeight.Text = _product.Weight.ToString();
                 txtUnitPrice.Text = _product.UnitPrice.ToString();
@@ -30,10 +30,12 @@ namespace SalesWPFApp {
 
         private Product GetProduct() {
             Product product = null;
+            string categoryName = cbCategoryId.Text;
+            int categoryId = productRepository.GetCategoryIdByName(categoryName);
             try {
                 product = new Product {
                     ProductId = int.Parse(txtProductId.Text),
-                    CategoryId = int.Parse(cbCategoryId.Text),
+                    CategoryId = categoryId,
                     ProductName = txtProductName.Text,
                     Weight = txtWeight.Text,
                     UnitPrice = decimal.Parse(txtUnitPrice.Text),
