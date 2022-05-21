@@ -17,11 +17,11 @@ namespace SalesWPFApp {
             cbCategoryId.SelectedIndex = 0;
             if (_product != null) {
                 txtProductId.Text = _product.ProductId.ToString();
-                cbCategoryId.SelectedIndex = productRepository.GetCategoryList().ToList().FindIndex(i => i == _product.CategoryId);
+                cbCategoryId.SelectedIndex = productRepository.GetCategoryList().ToList().FindIndex(i => i == _product.Category);
                 txtProductName.Text = _product.ProductName.ToString();
                 txtWeight.Text = _product.Weight.ToString();
                 txtUnitPrice.Text = _product.UnitPrice.ToString();
-                txtUnitsInStock.Text = _product.UnitslnStock.ToString();
+                txtUnitsInStock.Text = _product.UnitsInStock.ToString();
                 isEdit = true;
                 txtProductId.IsEnabled = false;
                 btnDelete.Visibility = Visibility.Visible;
@@ -37,7 +37,7 @@ namespace SalesWPFApp {
                     ProductName = txtProductName.Text,
                     Weight = txtWeight.Text,
                     UnitPrice = decimal.Parse(txtUnitPrice.Text),
-                    UnitslnStock = int.Parse(txtUnitsInStock.Text),
+                    UnitsInStock = int.Parse(txtUnitsInStock.Text),
                 };
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Get Product");

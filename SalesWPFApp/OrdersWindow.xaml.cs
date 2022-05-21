@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using BusinessObject;
 using BusinessObject.BusinessObject;
 using DataAccess.Repository;
 
@@ -37,7 +26,7 @@ namespace SalesWPFApp {
         }
 
         private void BtnInsert_Click(object sender, RoutedEventArgs e) {
-            WindowOrderDetail orderDialog = new(null);
+            OrderDetailWindow orderDialog = new(null);
             orderDialog.ShowDialog();
         }
 
@@ -52,7 +41,7 @@ namespace SalesWPFApp {
                     lvOrderDetails.ItemsSource = order.OrderDetails;
                     lvOrderDetails.Items.Refresh();
                 } else {
-                    WindowOrderDetail orderDialog = new(null);
+                    OrderDetailWindow orderDialog = new(null);
                     orderDialog.ShowDialog();
                 }
             } catch (Exception ex) {
@@ -62,7 +51,7 @@ namespace SalesWPFApp {
 
         private void lvOrders_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e) {
             Order prod = (Order)lvOrders.SelectedItem;
-            WindowOrderDetail orderDialog = new(prod);
+            OrderDetailWindow orderDialog = new(prod);
             orderDialog.ShowDialog();
         }
     }

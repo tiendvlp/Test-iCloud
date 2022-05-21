@@ -1,16 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using DataAccess.Repository;
 
 namespace SalesWPFApp {
@@ -32,11 +23,11 @@ namespace SalesWPFApp {
                 try {
                     DateTime start = DateTime.Parse(dp_start.Text);
                     DateTime end = DateTime.Parse(dp_end.Text);
-                    var result = orderRepository.ViewReport(start, end);
+                    var result = orderRepository.GetStatistic(start, end);
                     if (result.Any()) {
                         lvSales.ItemsSource = result;
                     } else {
-                        MessageBox.Show("There is no matched record.", "View Report");
+                        MessageBox.Show("There is no matched record at all.", "Get Statistic");
                     }
                 } catch (Exception ex) {
                     MessageBox.Show(ex.Message, "View Report");

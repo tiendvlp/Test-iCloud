@@ -23,7 +23,7 @@ namespace DataAccess.Repository
 
         public IEnumerable<Product> GetProductByUnitInStock(int unitsInStock) => ProductDAO.Instance.GetProductByUnitInStock(unitsInStock);
 
-        public IEnumerable<Product> GetProductByUnitPrice(decimal unitPrice) => ProductDAO.Instance.GetProductByUnitInStock(unitsInStock);
+        public IEnumerable<Product> GetProductByUnitPrice(decimal unitPrice) => ProductDAO.Instance.GetProductByUnitPrice(unitPrice);
 
         public IEnumerable<Product> GetProductList() => ProductDAO.Instance.GetProductList();
 

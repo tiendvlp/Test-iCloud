@@ -23,8 +23,6 @@
             <PasswordBox x:Name="txtPassword" Height="25"/>
             <TextBlock x:Name="errPassword" Height="25" Foreground="Red"/>
             <Button x:Name="btnLogin" Width="76" Height="25"  Content="Login" Click="BtnLogin_Click" RenderTransformOrigin="0.761,0.677" Background="LightGreen"/>
-            <Label x:Name="" Content=""/>
-            <Button x:Name="btnSignUp" Width="76" Height="25"  Content="SignUp" Click="BtnSignup_Click" RenderTransformOrigin="0.761,0.677" Background="Coral"/>
         </StackPanel>
     </Grid>
 </Window>

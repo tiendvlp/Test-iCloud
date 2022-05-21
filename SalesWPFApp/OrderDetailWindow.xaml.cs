@@ -65,12 +65,12 @@ namespace SalesWPFApp {
             try {
                 Order order = GetOrder();
                 if (isEdit) {
-                    orderRepository.UpdateOrder(order);
+                    orderRepository.Update(order);
                     Close();
                     MessageBox.Show($"{order.OrderId} is updated successfully.", "Update Order");
                     return;
                 }
-                orderRepository.CreateOrder(order);
+                orderRepository.Create(order);
                 Close();
                 MessageBox.Show($"{order.OrderId} is inserted successfully.", "Insert Order");
             } catch (Exception ex) {
@@ -81,7 +81,7 @@ namespace SalesWPFApp {
         private void BtnDelete_Click(object sender, RoutedEventArgs e) {
             try {
                 Order order = GetOrder();
-                orderRepository.DeleteOrder(order);
+                orderRepository.Delete(order);
                 Close();
                 MessageBox.Show($"{order.OrderId} is deleted successfully.", "Delete Order");
             } catch (Exception ex) {

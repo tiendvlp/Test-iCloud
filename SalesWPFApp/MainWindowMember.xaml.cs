@@ -64,8 +64,8 @@ namespace SalesWPFApp {
         }
 
         private void btn_logout_Click(object sender, RoutedEventArgs e) {
-            WindowLogin windowLogin = new();
-            windowLogin.Show();
+            LoginWindow loginWindow = new();
+            loginWindow.Show();
             Close();
         }
     }

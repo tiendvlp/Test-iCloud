@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using BusinessObject.BusinessObject;
 using DataAccess.Repository;
 
 namespace SalesWPFApp {
@@ -15,7 +16,7 @@ namespace SalesWPFApp {
         }
 
         public void LoadProductList() {
-            lvProducts.ItemsSource = productRepository.GetList();
+            lvProducts.ItemsSource = productRepository.GetProductList();
         }
 
         private void BtnLoad_Click(object sender, RoutedEventArgs e) {
@@ -27,7 +28,7 @@ namespace SalesWPFApp {
         }
 
         private void BtnInsert_Click(object sender, RoutedEventArgs e) {
-            WindowProductDetail ProductDialog = new(null);
+            ProductDetailWindow ProductDialog = new(null);
             ProductDialog.ShowDialog();
         }
 
@@ -37,14 +38,14 @@ namespace SalesWPFApp {
 
         private void lvProducts_PreviewMouseRightButtonUp(object sender, MouseButtonEventArgs e) {
             Product prod = (Product)lvProducts.SelectedItem;
-            WindowProductDetail ProductDialog = new(prod);
+            ProductDetailWindow ProductDialog = new(prod);
             ProductDialog.ShowDialog();
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e) {
             if (txtSearch.Text != null) {
                 try {
-                    IEnumerable<Product> result = productRepository.Search(txtSearch.Text); 
+                    IEnumerable<Product> result = productRepository.GetProductByKeyword(txtSearch.Text); 
                     if (!result.Any()) {
                         MessageBox.Show("There is no matched record.", "Search Product");
                     } else {
