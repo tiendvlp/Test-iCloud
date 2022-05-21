@@ -125,7 +125,7 @@ namespace DataAccess
                 try
                 {
                     var mem = GetMemberByEmail(member.Email);
-                    if (mem == null)
+                    if (mem.Count() == 0)
                     {
                         var fStoreDb = new FStoreDBContext();
                         fStoreDb.Members.Add(member);

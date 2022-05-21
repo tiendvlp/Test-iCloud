@@ -9,20 +9,20 @@
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="179*"/>
-            <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="104*"/>
+            <ColumnDefinition Width="251*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="40*"/>
         </Grid.ColumnDefinitions>
-        <Label Name="lbTitle" Foreground="LightCoral" FontWeight="Bold" FontSize="18" Margin="24,25,0,269"
-            HorizontalAlignment="Left" Content=" Welcome to SaleWinApp" Grid.ColumnSpan="3" Width="238"/>
-        <StackPanel Orientation ="Vertical" HorizontalAlignment="Left" Width="200" Margin="39,70,0,0" Grid.ColumnSpan="3">
+        <StackPanel Orientation ="Vertical" HorizontalAlignment="Left" Width="200" Margin="39,70,0,0">
             <Label x:Name="lbEmail" Content="Email"/>
             <TextBox x:Name="txtEmail" Height="25"/>
             <TextBlock x:Name="errEmail" Height="25" Foreground="Red"/>
             <Label x:Name="lbPassword" Content="Password"/>
             <PasswordBox x:Name="txtPassword" Height="25"/>
             <TextBlock x:Name="errPassword" Height="25" Foreground="Red"/>
-            <Button x:Name="btnLogin" Width="76" Height="25"  Content="Login" Click="BtnLogin_Click" RenderTransformOrigin="0.761,0.677" Background="LightGreen"/>
+            <Button x:Name="btnLogin" Width="67" Height="25"  Content="Login" Click="BtnLogin_Click" RenderTransformOrigin="0.761,0.677" Background="LightGreen"/>
         </StackPanel>
+        <Button x:Name="btnSignUp" Content="SignUp" HorizontalAlignment="Left" Margin="105,274,0,0" VerticalAlignment="Top" Width="68" Click="btnSignUp_Click" Height="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="92,25,0,0" Text="Sales App" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Background="LightCoral" Height="25" Width="94"/>
     </Grid>
 </Window>

@@ -7,15 +7,15 @@
         mc:Ignorable="d"
         Title="Member Details" Height="450" Width="500"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
-        Background="Beige">
+        Background="LightCyan">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="400">
-            <Label Name="lbTitle" Foreground="DeepSkyBlue" FontFamily="Bold" HorizontalAlignment="Center"
-                           FontSize="20" Content="Member Information" Margin="10" />
+            <Label Name="lbTitle" Foreground="LightCoral" FontFamily="Bold" HorizontalAlignment="Center"
+                           FontSize="20" Content="Member Details" Margin="10" FontWeight="Bold" />
             <Label Name="lbMemberId" Content="Member ID" />
             <TextBox Name="txtMemberId" HorizontalAlignment="Stretch" Height="25"/>
             <Label Name="lbMemberName" Content="Email" />
@@ -30,8 +30,8 @@
             <TextBox Name="txtPassword" HorizontalAlignment="Stretch" Height="25"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Height="25">
-            <Button x:Name="btnInsert" Width="80" Content="Save" Click="BtnInsert_Click"/>
-            <Button x:Name="btnDelete" Margin="30 0 0 0" Width="80" Content="Delete" Click="BtnDelete_Click"/>
+            <Button x:Name="btnInsert" Width="80" Content="Save" Click="BtnInsert_Click" Background="LightGreen"/>
+            <Button x:Name="btnDelete" Margin="30 0 0 0" Width="80" Content="Delete" Click="BtnDelete_Click" Background="Red"/>
         </StackPanel>
     </Grid>
 </Window>

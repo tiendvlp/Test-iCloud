@@ -59,5 +59,10 @@ namespace SalesWPFApp
             }
         }
 
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            MemberDetailWindow memberDialog = new(null);
+            memberDialog.ShowDialog();
+        }
     }
 }
