@@ -42,7 +42,7 @@ namespace SalesWPFApp {
                     UnitsInStock = int.Parse(txtUnitsInStock.Text),
                 };
             } catch (Exception ex) {
-                MessageBox.Show(ex.Message, "Get Product");
+                MessageBox.Show(ex.Message, "Get Product From Form");
             }
             return product;
         }

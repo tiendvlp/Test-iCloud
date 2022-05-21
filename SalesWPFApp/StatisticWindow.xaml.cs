@@ -15,15 +15,18 @@ namespace SalesWPFApp {
         }
 
         private void btn_viewSales_Click(object sender, RoutedEventArgs e) {
-            if (dp_start.Text.Length == 0) {
-                MessageBox.Show("Please enter start date.", "View Report");
-            } else if (dp_end.Text.Length == 0) {
-                MessageBox.Show("Please enter end date.", "View Report");
-            } else {
+         //   if (dp_start.Text.Length == 0) {
+         //       MessageBox.Show("Please enter start date.", "View Report");
+         //   } else if (dp_end.Text.Length == 0) {
+         //       MessageBox.Show("Please enter end date.", "View Report");
+         //   } else {
                 try {
-                    DateTime start = DateTime.Parse(dp_start.Text);
-                    DateTime end = DateTime.Parse(dp_end.Text);
-                    var result = orderRepository.GetStatistic(start, end);
+                    DateTime? start = startDate.SelectedDate;
+                    DateTime? end = endDate.SelectedDate;
+
+                    //  DateTime start = DateTime.Parse(dp_start.Text);
+                    //  DateTime end = DateTime.Parse(dp_end.Text);
+                    var result = orderRepository.GetStatistic((DateTime)start, (DateTime)end);
                     if (result.Any()) {
                         lvSales.ItemsSource = result;
                     } else {
@@ -32,7 +35,7 @@ namespace SalesWPFApp {
                 } catch (Exception ex) {
                     MessageBox.Show(ex.Message, "View Report");
                 }   
-            }
+           // }
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e) {

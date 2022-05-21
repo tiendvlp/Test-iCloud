@@ -5,25 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SalesWPFApp"
         mc:Ignorable="d"
-        Title="Window Report" Height="450" Width="450" Background="Beige"
+        Title="Window Report" Height="450" Width="450" Background="LightCyan"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <Label Content="Sales Report" HorizontalAlignment="Center" Margin="12" FontSize="18" FontWeight="DemiBold" Foreground="DeepSkyBlue" />
-        <StackPanel Orientation="Vertical" Margin="50" HorizontalAlignment="Center" Width="300">
-            <StackPanel Orientation="Horizontal" Height="45">
-                <TextBox x:Name="dp_start" Margin="0 10 10 10" Width="100"/>
-                <TextBox x:Name="dp_end" Margin="0 10 10 10" Width="100"/>
-                <Button x:Name="btn_viewSales" Content="View" Height="25" Width="80" Click="btn_viewSales_Click"  />
-            </StackPanel>
-            <ListView Name="lvSales" Height="Auto">
+        <Label Content="Sales Statistics Report" HorizontalAlignment="Center" Margin="0,-9,0,32" FontSize="20" FontWeight="Bold" Foreground="LightCoral" Width="410" />
+        <StackPanel Orientation="Vertical" Margin="0,119,0,112" HorizontalAlignment="Center" Width="330">
+            <ListView x:Name="lvSales" Height="Auto" Width="322">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Date" Width="140" DisplayMemberBinding="{Binding Path=Date}" />
-                        <GridViewColumn Header="Sales" Width="150" DisplayMemberBinding="{Binding Path=Amount}" />
+                        <GridViewColumn Header="Date" Width="140" DisplayMemberBinding="{Binding Date}" />
+                        <GridViewColumn Header="Sales" Width="150" DisplayMemberBinding="{Binding Amount}" />
                     </GridView>
                 </ListView.View>
             </ListView>
         </StackPanel>
         <Button x:Name="btnClose" Margin="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="80" Height="25" Content="Close" Click="btnClose_Click"/>
+        <DatePicker x:Name="endDate" HorizontalAlignment="Left" Margin="186,53,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="startDate" HorizontalAlignment="Left" Margin="84,53,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_viewSales" Content="View Statistics" HorizontalAlignment="Left" Margin="293,55,0,0" Click="btn_viewSales_Click" VerticalAlignment="Top"/>
+        <Label Content="From" HorizontalAlignment="Left" Margin="84,27,0,0" VerticalAlignment="Top"/>
+        <Label Content="To" HorizontalAlignment="Left" Margin="186,27,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
