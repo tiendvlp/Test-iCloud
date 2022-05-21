@@ -54,5 +54,11 @@ namespace SalesWPFApp {
             OrderDetailWindow orderDialog = new(prod);
             orderDialog.ShowDialog();
         }
+
+        private void lvOrders_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Order prod = (Order)lvOrders.SelectedItem;
+            // test th chưa có chạy được
+        }
     }
 }

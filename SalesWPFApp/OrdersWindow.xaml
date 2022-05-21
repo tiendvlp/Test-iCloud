@@ -13,7 +13,7 @@
             <RowDefinition Height="45" />
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <ListView Name="lvOrders" Height="Auto" Width="560" Margin="15 15 0 15" PreviewMouseDoubleClick="lvOrders_PreviewMouseDoubleClick"  PreviewMouseLeftButtonUp="lvOrders_PreviewMouseLeftButtonUp">
+            <ListView Name="lvOrders" Height="Auto" Width="560" Margin="15 15 0 15" PreviewMouseDoubleClick="lvOrders_PreviewMouseDoubleClick"  PreviewMouseLeftButtonUp="lvOrders_PreviewMouseLeftButtonUp" PreviewMouseRightButtonDown="lvOrders_PreviewMouseRightButtonDown">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Order ID" Width="70"

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="WindowProducts" Height="550" Width="811" Background="LightCyan"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid Margin="0,0,33,55">
+    <Grid Margin="17,0,17,55">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="72" />
             <RowDefinition />
@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         <TextBox Name="txtSearch" Margin="27,23,555,23" />
         <Button x:Name="btnSearch" Content="Search By Keyword" Click="btnSearch_Click" Margin="230,23,413,23"/>
-        <ListView Grid.Row="1" Name="lvProducts" Height="Auto" Width="Auto" PreviewMouseDoubleClick="lvProducts_PreviewMouseRightButtonUp" Margin="27,45,10,30" Grid.RowSpan="2">
+        <ListView Grid.Row="1" Name="lvProducts" Height="Auto" Width="Auto" PreviewMouseDoubleClick="lvProducts_PreviewMouseRightButtonUp" Margin="10,45,10,30" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Product ID" Width="100" DisplayMemberBinding="{Binding Path=ProductId}" />
