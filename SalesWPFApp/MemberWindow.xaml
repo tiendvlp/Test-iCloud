@@ -19,7 +19,7 @@
                     <RowDefinition Height="372" />
                     <RowDefinition Height="78" />
                 </Grid.RowDefinitions>
-                <ListView Grid.Row="0" Name="lvMembers" Height="Auto" Width="Auto" PreviewMouseDoubleClick="lvMembers_PreviewMouseRightButtonUp" Margin="100,0,0,29">
+                <ListView Grid.Row="0" Name="lvMembers" Height="Auto" Width="Auto" PreviewMouseDoubleClick="lvMembers_PreviewMouseRightButtonUp" Margin="10,0,0,29">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Member ID" Width="70"
@@ -40,12 +40,12 @@
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Width="0">
                 </StackPanel>
                 <Button Grid.Row="1" x:Name="btnClose" Margin="582,20,0,20" Width="80" Content="Close" Click="BtnClose_Click"  HorizontalAlignment="Left"/>
-                <Button x:Name="btnLoad" Content="Reload" Click="BtnLoad_Click" Margin="10,97,582,251"/>
-                <Button x:Name="btnCreate" Margin="10,53,582,293" Content="Add" Click="BtnInsert_Click"/>
-                <TextBox x:Name="idTextbox" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="18"/>
-                <Button x:Name="btnSearchById" Content="Search Member By ID" HorizontalAlignment="Left" Margin="180,10,0,0" Grid.Row="1" VerticalAlignment="Top" Click="btnSearchById_Click" Height="20" Width="135"/>
-                <TextBox x:Name="emailTextbox" HorizontalAlignment="Left" Margin="10,40,0,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="18"/>
-                <Button x:Name="btnSearchByEmail" Content="Search Member By Email" HorizontalAlignment="Left" Margin="180,40,0,20" Grid.Row="1" Click="btnSearchByEmail_Click" Width="135"/>
+                <Button x:Name="btnLoad" Content="Reload" Click="BtnLoad_Click" Margin="346,34,246,20" Grid.Row="1"/>
+                <Button x:Name="btnCreate" Margin="346,365,246,59" Content="Add" Click="BtnInsert_Click" RenderTransformOrigin="0.96,0.202" Grid.RowSpan="2"/>
+                <TextBox x:Name="idTextbox" HorizontalAlignment="Left" Margin="10,365,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="26" Grid.RowSpan="2"/>
+                <Button x:Name="btnSearchById" Content="Search Member By ID" HorizontalAlignment="Left" Margin="180,365,0,0" VerticalAlignment="Top" Click="btnSearchById_Click" Height="26" Width="135" RenderTransformOrigin="0.545,-0.722" Grid.RowSpan="2"/>
+                <TextBox x:Name="emailTextbox" HorizontalAlignment="Left" Margin="10,33,0,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="25"/>
+                <Button x:Name="btnSearchByEmail" Content="Search Member By Email" HorizontalAlignment="Left" Margin="180,33,0,20" Grid.Row="1" Click="btnSearchByEmail_Click" Width="135"/>
             </Grid>
         </DockPanel>
     </Grid>
